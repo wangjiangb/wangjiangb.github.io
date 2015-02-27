@@ -5,9 +5,9 @@
 
 ###Attention
 
-I'm no longer maintaining Thinny, at least not until I've time to work on it again.
+I'm no longer maintaining this repository.
 
-If you want to add something, feel free to send a pull request, which I'll see if it's okay and merge. Or you can [report an issue](http://github.com/camporez/Thinny/issues) and pray.
+If you want to add something, feel free to send a pull request, which I'll see if it's okay and merge.
 
 ----
 
