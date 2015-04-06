@@ -54,8 +54,7 @@ copyright:
 
 parallax:         false
 
-kramdown:
-  input: GFM
+markdown: redcarpet
 
 # Google Analytics (add the UA Code, e.g.: UA-xxxxxxxx-1)
 google_analytics:
