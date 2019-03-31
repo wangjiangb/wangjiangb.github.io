@@ -1,0 +1,152 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+  <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.js"></script>
+  <script src="d3/d3.min.js"></script>
+  <script src="d3.timeline.js"></script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title></title>
+</head>
+<body>
+<div id="layout-content">
+<p>&lt;!DOCTYPE html PUBLIC &ldquo;-<i></i>W3C<i></i>DTD XHTML 1.1<i></i>EN&rdquo;
+&ldquo;http:<i></i>www.w3.org<i>TR</i>xhtml11<i>DTD</i>xhtml11.dtd&rdquo;&gt;
+&lt;html xmlns=&ldquo;http:<i></i>www.w3.org<i>1999</i>xhtml&rdquo; xml:lang=&ldquo;en&rdquo;&gt;
+&lt;head&gt;
+&lt;meta name=&ldquo;generator&rdquo; content=&ldquo;jemdoc, see http:<i></i>jemdoc.jaboc.net<i>&rdquo; </i>&gt;
+&lt;meta http-equiv=&ldquo;Content-Type&rdquo; content=&ldquo;text<i>html;charset=utf-8&rdquo; </i>&gt;
+&lt;script src=&ldquo;https:<i></i>code.jquery.com<i>jquery.js&rdquo;&gt;&lt;</i>script&gt;
+&lt;script src=&ldquo;http:<i></i>netdna.bootstrapcdn.com<i>bootstrap</i>3.1.0<i>js</i>bootstrap.js&rdquo;&gt;&lt;<i>script&gt;
+&lt;script src=&ldquo;d3</i>d3.min.js&rdquo;&gt;&lt;<i>script&gt;
+&lt;script src=&ldquo;d3.timeline.js&rdquo;&gt;&lt;</i>script&gt;
+&lt;link rel=&ldquo;stylesheet&rdquo; href=&ldquo;http:<i></i>netdna.bootstrapcdn.com<i>bootstrap</i>3.1.0<i>css</i>bootstrap.min.css&rdquo;&gt;
+&lt;link rel=&ldquo;stylesheet&rdquo; href=&ldquo;http:<i></i>netdna.bootstrapcdn.com<i>bootstrap</i>3.1.0<i>css</i>bootstrap-theme.min.css&rdquo;&gt;
+&lt;link rel=&ldquo;stylesheet&rdquo; href=&ldquo;jemdoc.css&rdquo; type=&ldquo;text<i>css&rdquo; </i>&gt;
+&lt;title&gt;Datasets&lt;<i>title&gt;
+&lt;</i>head&gt;
+&lt;body&gt;
+&lt;nav class=&ldquo;navbar navbar-default&rdquo; role=&ldquo;navigation&rdquo;&gt;
+&lt;div class=&ldquo;container-fluid&rdquo;&gt;
+&lt;ul class=&ldquo;nav navbar-nav&rdquo;&gt;
+&lt;a class=&ldquo;navbar-brand&rdquo; href=&ldquo;
+&lt;li&gt;&lt;a href=&rdquo;index.html&ldquo;&gt;Home&lt;<i>a&gt;&lt;</i>li&gt;
+&lt;li&gt;&lt;a href=&rdquo;pdfs<i>jiangwang_CV.pdf&ldquo;&gt;CV&lt;</i>a&gt;&lt;<i>li&gt;
+&lt;li&gt;&lt;a href=&rdquo;pubs.html&ldquo;&gt;Publications&lt;</i>a&gt;&lt;<i>li&gt;
+&lt;li&gt;&lt;a href=&rdquo;soft.html&ldquo;&gt;Softwares&lt;</i>a&gt;&lt;<i>li&gt;
+&lt;li class=&rdquo;active&ldquo;&gt;&lt;a href=&rdquo;my_data.html&ldquo;&gt;Data&lt;</i>a&gt;&lt;<i>li&gt;
+&lt;li&gt;&lt;a href=&rdquo;about.html&ldquo;&gt;About&lt;</i>a&gt;&lt;<i>li&gt;
+&lt;</i>ul&gt;
+&lt;<i>div&gt;
+&lt;</i>nav&gt;
+&lt;div id=&rdquo;toptitle&ldquo;&gt;
+&lt;h1&gt;Datasets&lt;<i>h1&gt;
+&lt;div id=&rdquo;subtitle&ldquo;&gt;&lt;link href=&rdquo;imgs</i>favicon.ico&ldquo; rel=&rdquo;shortcut icon&ldquo; type=&rdquo;image<i>x-icon&ldquo; </i>&gt;&lt;<i>div&gt;
+&lt;</i>div&gt;
+&lt;h2&gt;MSR Action 3D&lt;<i>h2&gt;
+&lt;div class=&rdquo;media&ldquo;&gt;
+&lt;a class=&rdquo;pull-left&ldquo;&gt;&lt;img class=&rdquo;media object&ldquo; src=&rdquo;imgs</i>MSR-Action3D.png&ldquo; alt=&rdquo;225&ldquo; width=&rdquo;660px&ldquo; <i>&gt;&lt;</i>a&gt;&lt;div class=&rdquo;media-body&ldquo;&gt;&lt;p&gt;MSR-Action3D dataset  is an action dataset of depth sequences
+captured by a depth camera. This dataset contains
+twenty actions: high arm wave, horizontal arm wave,
+hammer, hand catch, forward punch, high throw, draw x, draw tick,
+draw circle,
+hand clap, two hand wave, side-boxing,
+bend, forward kick, side kick, jogging,
+tennis swing, tennis serve, golf swing,
+pick up &amp; throw. It is created by &lt;a href=&rdquo;http:<i></i>www.uow.edu.au<i>&nbsp;wanqing</i>&ldquo;&gt;Wanqing Li&lt;<i>a&gt; during his time at
+Microsoft Research Redmond.&lt;</i>p&gt;
+&lt;p&gt;The dataset can be found in &lt;a href=&rdquo;http:<i></i>research.microsoft.com<i>en-us</i>um<i>people</i>zliu<i>actionrecorsrc</i>&ldquo;&gt;http:<i></i>research.microsoft.com<i>en-us</i>um<i>people</i>zliu<i>actionrecorsrc</i>&lt;<i>a&gt;.&lt;</i>p&gt;
+&lt;<i>div&gt;&lt;</i>div&gt;
+&lt;h2&gt;MSR DailyActivity 3D Dataset&lt;<i>h2&gt;
+&lt;div class=&rdquo;media&ldquo;&gt;
+&lt;a class=&rdquo;pull-left&ldquo;&gt;&lt;img class=&rdquo;media object&ldquo; src=&rdquo;imgs</i>MSR-dailyAcitity3D.png&ldquo; alt=&rdquo;225&ldquo; width=&rdquo;660px&ldquo; <i>&gt;&lt;</i>a&gt;&lt;div class=&rdquo;media-body&ldquo;&gt;&lt;p&gt;DailyActivity3D dataset  is a daily activity dataset captured by a Kinect device. There are 16 activity types:
+drink, eat, read book, call cellphone,write on a paper, use laptop,
+use vacuum cleaner, cheer up, sit still,
+toss paper, play game, lay down on sofa,
+walk, play guitar, stand up, sit down.
+If possible, each subject performs an activity in two
+different poses: &amp;ldquo;sitting on sofa&amp;rdquo; and &amp;ldquo;standing&amp;rdquo;. The total
+number of the activity sequences is &amp;ldquo;320&amp;rdquo;.&lt;<i>p&gt;
+&lt;p&gt;This data was created by me during my time at Microsoft Research Redmond.&lt;</i>p&gt;
+&lt;p&gt;The dataset can be found in &lt;a href=&rdquo;http:<i></i>research.microsoft.com<i>en-us</i>um<i>people</i>zliu<i>actionrecorsrc</i>&ldquo;&gt;http:<i></i>research.microsoft.com<i>en-us</i>um<i>people</i>zliu<i>actionrecorsrc</i>&lt;<i>a&gt;.&lt;</i>p&gt;
+&lt;p&gt;I have created a cropped version of this dataset, which only contains the cropped
+human regions, it can be found here &lt;a href=&rdquo;http:<i></i>users.eecs.northwestern.edu<i>&nbsp;jwa368</i>cropped_depth.tar.bz2&ldquo;&gt;cropped version of MSRDailyAction Dataset&lt;<i>a&gt;.&lt;</i>p&gt;
+&lt;<i>div&gt;&lt;</i>div&gt;
+&lt;h2&gt;Subtle Walking  From CMU Mocap Dataset&lt;<i>h2&gt;
+&lt;p&gt;This is a subject of the subtle waking activities in CMU Mocap Dataset. This
+dataset is collected in the paper &amp;ldquo;L. Han, X. Wu, W. Liang, G. Hou, and Y. Jia, 'Discriminative
+human action recognition in the learned hierarchical manifold
+space&amp;rsquo;, Image and Vision Computing, vol. 28, no. 5, pp. 836-849,
+May 2010.&amp;rdquo;. I replicate the collection and organization process of this paper, and
+create a dataset accordingly.&lt;</i>p&gt;
+&lt;p&gt;The dataset can be found in &lt;a href=&rdquo;http:<i></i>users.eecs.northwestern.edu<i>&nbsp;jwa368</i>mocap.tar.bz2&ldquo;&gt;MoCap Walking Dataset&lt;<i>a&gt;.&lt;</i>p&gt;
+&lt;h2&gt;MSR Gesture 3D Dataset&lt;<i>h2&gt;
+&lt;div class=&rdquo;media&ldquo;&gt;
+&lt;a class=&rdquo;pull-left&ldquo;&gt;&lt;img class=&rdquo;media object&ldquo; src=&rdquo;imgs</i>MSR-Gesture3D.png&ldquo; alt=&rdquo;225&ldquo; width=&rdquo;330px&ldquo; <i>&gt;&lt;</i>a&gt;&lt;div class=&rdquo;media-body&ldquo;&gt;&lt;p&gt;The dataset was captured by a Kinect device by Alex Kurakin. There are 12 dynamic American Sign Language (ASL) gestures, and 10 people. Each person performs each gesture 2-3 times. There are 336 files in total, each corresponding to a depth sequence. The hand portion (above the wrist) has been segmented. The file name has the format sub_depth_m_n where m is the person index. n ranges from 1 to 36. Note that for some (m,n), the file sub_depth_m_n  does not exist. For example, there is no &amp;ldquo;sub_depth_02_03&amp;rdquo;. The reason is that some of the bad sequences are excluded from the dataset. I cropped the hand with Kinect skeleton tracker and subsample all the data to the fixed size.&lt;<i>p&gt;
+&lt;p&gt;The dataset can be founded in &lt;a href=&rdquo;http:</i><i>research.microsoft.com</i>en-us<i>um</i>people<i>zliu</i>actionrecorsrc<i>&ldquo;&gt;http:</i><i>research.microsoft.com</i>en-us<i>um</i>people<i>zliu</i>actionrecorsrc<i>&lt;</i>a&gt;.&lt;<i>p&gt;
+&lt;</i>div&gt;&lt;<i>div&gt;
+&lt;h2&gt;Northwestern-UCLA Multiview Action 3D Dataset&lt;</i>h2&gt;
+&lt;div class=&rdquo;media&ldquo;&gt;
+&lt;a class=&rdquo;pull-left&ldquo;&gt;&lt;img class=&rdquo;media object&ldquo; src=&rdquo;imgs<i>multiview_examples_new.png&ldquo; alt=&rdquo;225&ldquo; width=&rdquo;600px&ldquo; </i>&gt;&lt;<i>a&gt;&lt;div class=&rdquo;media-body&ldquo;&gt;&lt;p&gt;The Multiview 3D event dataset is capture by me and &lt;a href=&rdquo;http:</i><i>www.stat.ucla.edu</i>&nbsp;xiaohan.nie<i>&ldquo;&gt;Xiaohan Nie&lt;</i>a&gt; in UCLA.
+it contains RGB, depth and human skeleton data captured
+simultaneously by three Kinect cameras. This dataset include 10 action
+categories: pick up with one hand, pick up with two
+hands, drop trash, walk around, sit down,
+stand up, donning, doffing, throw, carry. Each action is
+performed by 10 actors. This dataset contains data taken from a variety of  viewpoints.&lt;<i>p&gt;
+&lt;p&gt;The dataset can be found in
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-aa&ldquo;&gt;part-1&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-ab&ldquo;&gt;part-2&lt;<i>a&gt;
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-ac&ldquo;&gt;part-3&lt;<i>a&gt;, &lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part.ad&ldquo;&gt;part-4&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-ae&ldquo;&gt;part-5&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-af&ldquo;&gt;part-6&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-ag&ldquo;&gt;part-7&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-ah&ldquo;&gt;part-8&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-ai&ldquo;&gt;part-9&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-aj&ldquo;&gt;part-10&lt;<i>a&gt;,
+&lt;a href=&rdquo;http:</i><i>users.eecs.northwestern.edu</i>&nbsp;jwa368<i>data</i>multiview_action.tgz.part-ak&ldquo;&gt;part-11&lt;<i>a&gt;,&lt;</i>p&gt;
+&lt;p&gt;We also created a version of the dataset that only contains RGB videos: &lt;a href=&rdquo;http:<i></i>users.eecs.northwestern.edu<i>&nbsp;jwa368</i>data<i>multiview_action_videos.tgz&ldquo;&gt;RGB videos only&lt;</i>a&gt;.&lt;<i>p&gt;
+&lt;</i>div&gt;&lt;<i>div&gt;
+&lt;h2&gt;Image Similarity Triplet Dataset&lt;</i>h2&gt;
+&lt;div class=&rdquo;media&ldquo;&gt;
+&lt;a class=&rdquo;pull-left&ldquo;&gt;&lt;img class=&rdquo;media object&ldquo; src=&rdquo;imgs<i>sample_triplets_table.png&ldquo; alt=&rdquo;225&ldquo; width=&rdquo;600px&ldquo; </i>&gt;&lt;<i>a&gt;&lt;div class=&rdquo;media-body&ldquo;&gt;&lt;p&gt;&lt;a href=&rdquo;https:</i><i>sites.google.com</i>site<i>imagesimilaritydata</i>&ldquo;&gt;https:&lt;i&gt;&lt;<i>i&gt;sites.google.com&lt;i&gt;site&lt;</i>i&gt;imagesimilaritydata<i>&lt;</i>a&gt;&lt;<i>p&gt;
+&lt;</i>div&gt;&lt;<i>div&gt;
+&lt;div id=&rdquo;footer&ldquo;&gt;
+&lt;div id=&rdquo;footer-text&ldquo;&gt;
+Page generated 2014-05-20 10:28:40 Central Daylight Time, by &lt;a href=&rdquo;http:</i><i>jemdoc.jaboc.net</i>"&gt;jemdoc&lt;<i>a&gt;.
+&lt;</i>div&gt;
+&lt;<i>div&gt;
+&lt;</i>td&gt;
+&lt;<i>tr&gt;
+&lt;</i>table&gt;
+&lt;body&gt;
+&lt;script&gt;
+(function(i,s,o,g,r,a,m){i<a href="'GoogleAnalyticsObject'">'GoogleAnalyticsObject'</a>=r;i<a href="r">r</a>=i<a href="r">r</a>||function(){
+(i<a href="r">r</a>.q=i<a href="r">r</a>.q||<a href=""></a>).push(arguments)},i<a href="r">r</a>.l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)<a href="0">0</a>;a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script&rsquo;,&rsquo;<i></i>www.google-analytics.com<i>analytics.js&rsquo;,'ga&rsquo;);
+ga('create&rsquo;, 'UA-28719285-1&rsquo;, 'northwestern.edu&rsquo;);
+ga('send&rsquo;, 'pageview&rsquo;);
+&lt;</i>script&gt;
+&lt;/html&gt;</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-05-26 09:43:04 Central Daylight Time, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+</div>
+</div>
+</div>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-28719285-1', 'northwestern.edu');
+  ga('send', 'pageview');
+</script>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+  <script src="jquery.min.js"></script>
+  <script src="d3/d3.min.js"></script>
+  <script src="d3.timeline.js"></script>
+<link rel=stylesheet href="//fonts.googleapis.com/css?family=Open+Sans:400,700"/>
+  <style type="text/css">
+    .axis path,
+
+    .axis line {
+      fill: none;
+      stroke: #999;
+      shape-rendering: crispEdges;
+    }
+
+    #timeline {
+      background-color:#272727;
+    }
+
+    .axis text {
+      font-family: sans-serif;
+      font-size: 10px;
+    }
+
+    .timeline-label {
+      color: blue;
+      font-family: 'Lucida Sans Typewriter',Monaco,'Courier','Courier New',monospace;
+      display: inline-block;
+      font-size:12px;
+      border:4px solid #fff;
+      border-radius:4px;
+      margin-right:10px;
+      opacity: .8;
+      position:relative;
+      left:-2px
+      white-space:nowrap;
+    }
+
+    #timeline2 .axis {
+      transform: translate(0px,30px);
+      -ms-transform: translate(0px,30px); /* IE 9 */
+      -webkit-transform: translate(0px,30px); /* Safari and Chrome */
+      -o-transform: translate(0px,30px); /* Opera */
+      -moz-transform: translate(0px,30px); /* Firefox */
+    }
+
+    .coloredDiv {
+      height:20px; width:20px; float:left;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function() {
+      var testDataNew = [
+        {times: [{"starting_time": new Date(2003, 9, 1, 0, 0, 0, 0),
+        "ending_time": new Date(2007, 7, 1, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 09/2003-07/2007 </tspan>: Fudan University Bachelor", "color": "#f6841f"}]},
+        {times: [{"starting_time": new Date(2007, 6, 1, 0, 0, 0, 0),
+        "ending_time" : new Date(2007, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\">2007 Summer </tspan>: Software Engineer Intern, Accenture", "color": "#4efc19"}]},
+        {times: [{"starting_time": new Date(2007, 9, 1, 0, 0, 0, 0),
+        "ending_time": new Date(2010, 7, 1, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 09/2007-07/2010</tspan>: Fudan University Master", "color": "#fcd712"}]},
+        {times: [{"starting_time": new Date(2008, 7, 1, 0, 0, 0, 0),
+        "ending_time": new Date(2008, 9, 30, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2008 Summer</tspan>: Research Intern, Microsoft Research Asia","color": "#4efc19"}]},
+        {times: [{"starting_time": new Date(2009, 5, 1, 0, 0, 0, 0),
+        "ending_time": new Date(2009, 8, 30, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2009 Summer</tspan>: R&D Intern, Baidu Shanghai", "color": "#4efc19"}]},
+        {times: [{"starting_time": new Date(2010, 9, 1, 0, 0, 0, 0),
+        "ending_time": new Date(2014, 6, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 09/2010--06/2014</tspan>: Northwestern University Ph.D.", "color": "#00a3ff"}]},
+        {times: [{"starting_time": new Date(2011, 6, 15, 0, 0, 0, 0),
+        "ending_time": new Date(2011, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2011 Summer</tspan>: Research Intern, Microsoft Research Redmond", "color": "#4efc19"}]},
+        {times: [{"starting_time": new Date(2012, 6, 15, 0, 0, 0, 0),
+        "ending_time": new Date(2012, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2012 Summer</tspan>: SDE Intern, Google Research", "color": "#4efc19"}]},
+        {times: [{"starting_time": new Date(2013, 6, 15, 0, 0, 0, 0),
+        "ending_time": new Date(2013, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2013 Summer</tspan>: SDE Intern, Google", "color": "#4efc19"}]},
+        {times: [{"starting_time": new Date(2014, 1, 15, 0, 0, 0, 0),
+        "ending_time": new Date(2014, 2, 20, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 01/2014</tspan>Publish book: Human Action Recogniton with Depth Camera", color: "#ddd"}]},
+        {times: [{"starting_time": new Date(2014, 6, 15, 0, 0, 0, 0),
+        "ending_time": new Date(2014, 7, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> Start </tspan> Work at Baidu Deep Learning Research Institue", "color": "#4efc19"}]},
+        ];
+
+
+      function timelineRect() {
+        var chartWidth = 1400;
+        var width = 1200;
+        var chart = d3.timeline().stack().width(chartWidth)
+          .margin({left: 0, right: 350, top: 0, bottom: 0})
+          .textColor("#999")
+          .barOpacity(.5)
+          .itemHeight(15)
+          .tickFormat( //
+            {format: d3.time.format("%Y"),
+            tickTime: d3.time.years,
+            tickInterval: 1,
+            tickSize: 10})
+          .scroll(function (x, scale) {
+            $("#scrolled_date").text(scale.invert(x) + " to " + scale.invert(x+width));
+          });
+
+        var svg = d3.select("#timeline").append("svg").attr("width", width)
+          .datum(testDataNew).call(chart);
+      }
+
+      function timelineCircle() {
+        var chart = d3.timeline()
+          .tickFormat( //
+            {format: d3.time.format("%I %p"),
+            tickTime: d3.time.hours,
+            tickInterval: 1,
+            tickSize: 30})
+          .display("circle"); // toggle between rectangles and circles
+
+        var svg = d3.select("#timeline2").append("svg").attr("width", width)
+          .datum(testData).call(chart);
+      }
+
+      function timelineHover() {
+        var chart = d3.timeline()
+          .width(width*4)
+          .stack()
+          .margin({left:70, right:30, top:0, bottom:0})
+          .hover(function (d, i, datum) {
+          // d is the current rendering object
+          // i is the index during d3 rendering
+          // datum is the id object
+            var div = $('#hoverRes');
+            var colors = chart.colors();
+            div.find('.coloredDiv').css('background-color', colors(i))
+            div.find('#name').text(datum.label);
+          })
+          .click(function (d, i, datum) {
+            alert(datum.label);
+          })
+          .scroll(function (x, scale) {
+            $("#scrolled_date").text(scale.invert(x) + " to " + scale.invert(x+width));
+          });
+
+        var svg = d3.select("#timeline3").append("svg").attr("width", width)
+          .datum(labelTestData).call(chart);
+      }
+
+      function timelineStackedIcons() {
+        var chart = d3.timeline()
+          .beginning(1355752800000) // we can optionally add beginning and ending times to speed up rendering a little
+          .ending(1355774400000)
+          .stack() // toggles graph stacking
+          .margin({left:70, right:30, top:0, bottom:0})
+          ;
+        var svg = d3.select("#timeline5").append("svg").attr("width", width)
+          .datum(iconTestData).call(chart);
+      }
+
+      function timelineLabelColor() {
+        var chart = d3.timeline()
+          .beginning(1355752800000) // we can optionally add beginning and ending times to speed up rendering a little
+          .ending(1355774400000)
+          .stack() // toggles graph stacking
+          .margin({left:70, right:30, top:0, bottom:0})
+          ;
+        var svg = d3.select("#timeline6").append("svg").attr("width", width)
+          .datum(labelColorTestData).call(chart);
+      }
+
+      function timelineRotatedTicks() {
+        var chart = d3.timeline()
+          .rotateTicks(45);
+
+        var svg = d3.select("#timeline7").append("svg").attr("width", width)
+          .datum(testData).call(chart);
+      }
+
+      function timelineRectColors() {
+
+        var colorScale = d3.scale.ordinal().range(['#6b0000','#ef9b0f','#ffee00'])
+            .domain(['apple','orange','lemon']);
+
+        var chart = d3.timeline()
+            .colors( colorScale )
+            .colorProperty('fruit');
+
+        var svg = d3.select("#timelineColors").append("svg").attr("width", width)
+          .datum(testDataWithColor).call(chart);
+      }
+
+
+      function timelineRelativeTime() {
+        //This solution is for relative time is from
+        //http://stackoverflow.com/questions/11286872/how-do-i-make-a-custom-axis-formatter-for-hours-minutes-in-d3-js
+        var formatTime = d3.time.format("%Hh%Mm"),
+            formatMinutes = function(d) { return formatTime(new Date(2012, 0, 1, 0, 0, 0, d)); };   //The intervals are in millis
+        var chart = d3.timeline()
+          .relativeTime()
+          .tickFormat({
+            format: formatMinutes,
+            tickTime: d3.time.minutes,
+            tickInterval: 30,
+            tickSize: 15,
+          });
+
+        var svg = d3.select("#timelineRelativeTime").append("svg").attr("width", width)
+          .datum(testDataRelative).call(chart);
+          console.log(testDataRelative);
+      }
+
+      timelineRect();
+      // timelineCircle();
+      // timelineHover();
+      // timelineStackedIcons();
+      // timelineLabelColor();
+      // timelineRotatedTicks();
+      // timelineRectColors();
+      // timelineRelativeTime();
+    }
+  </script>
+</head>
+<body>
+    <div id="timeline"></div>
+  <div>
+    <h3>It works with circles too</h3>
+    <div id="timeline2"></div>
+  </div>
+  <div>
+    <h3>A stacked timeline with hover, click, and scroll events</h3>
+    <div id="timeline3"></div>
+    <div id="hoverRes">
+      <div class="coloredDiv"></div>
+      <div id="name"></div>
+      <div id="scrolled_date"></div>
+    </div>
+  </div>
+  <div>
+    <h3>We can also use icons</h3>
+    <div id="timeline5"></div>
+  </div>
+
+  <div>
+    <h3>We can change colors and put labels</h3>
+    <div id="timeline6"></div>
+  </div>
+
+  <div>
+    <h3>We can also rotate tick mark labels</h3>
+    <div id="timeline7"></div>
+  </div>
+
+  <div>
+    <h3>A timeline with colors mapped from the data</h3>
+    <div id="timelineColors"></div>
+  </div>
+
+  <div>
+    <h3>A timeline with relative timepoints</h3>
+    <div width="100%" id="timelineRelativeTime"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1"
+      http-equiv="Content-Type">
+    <title>Northwestern Computer Vision & Machine Learning Reading Group</title>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28719285-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </head>
+<body>
+  <H1 ALIGN=CENTER>Northwestern Computer Vision & Machine Learning Reading Group</H1>
+  We read papers in the field of computer vision and machine learning. If you are willing to join to group
+  please e-mail: wangjiangb at gmail dot com 
+  </body>
+<H3>Regular Meeting Time &amp; Place</H3>
+  Technological Institute F313 every Wed. from 1-3 pm.
+<H3>Meetings</H3>
+<table BORDER=1 CELLPADDING=2 CELLSPACING=3>
+<TR>
+  <TH>
+    Date
+  </TH>
+  <TH>
+    Time
+  </TH>
+  <TH>
+    Place 
+  </TH>
+  <TH>
+    Presenter
+  </TH>
+  <TH>
+    Paper
+  </TH>
+</TR>
+<P>
+<FONT FACE="Times New Roman">
+  <TR>
+    <TH>
+      02/15/2011
+    </TH>
+    <TH>
+      1:00 pm
+    </TH>
+    <TH>
+      F313 
+    </TH>
+    <TH>
+      Xiaohui Shen
+    </TH>
+    <TH>
+      Relative Attributes, 2011 ICCV, Davi Parikh and Kristin Grauman 
+    </TH>
+  </TR>
+
+  <TR>
+    <TH>
+      02/08/2011
+    </TH>
+    <TH>
+      1:00 pm
+    </TH>
+    <TH>
+      F313 
+    </TH>
+    <TH>
+      Yin Xia
+    </TH>
+    <TH>
+      Detecting text in natural scenens with stroke width transform, 2010 CVPR, Boris Epshtein et al.
+    </TH>
+  </TR>
+
+<TR>
+<TH>
+    02/01/2011
+  </TH>
+  <TH>
+    1:00 pm
+  </TH>
+  <TH>
+    F313 
+  </TH>
+  <TH>
+    Zhuoyuan Chen
+  </TH>
+  <TH>
+   Learning Sparse Representations of High Dimensional Data on Large Scale Dictionary, NIPS 2011, Zhen James Xiang et al.
+  </TH>
+</TR>
+<TR>
+<TH>
+    01/24/2011
+  </TH>
+  <TH>
+    1:00 pm
+  </TH>
+  <TH>
+    F313 
+  </TH>
+  <TH>
+    Jiang Wang
+  </TH>
+  <TH>
+   Unsupervised Semantic Parsing, EMNLP 2009, Hoifung Poon et al.
+  </TH>
+</TR>
+
+
+<TR>
+<TH>
+    01/17/2011
+  </TH>
+  <TH>
+    1:00 pm
+  </TH>
+  <TH>
+    F313 
+  </TH>
+  <TH>
+    Philip Lee
+  </TH>
+  <TH>
+   Computer-Aided Diagnosis and Artificial Intelligence in Clinical Imaging". 2011. J. Shiraishi et al.   
+  </TH>
+</TR>
+
+<TR>
+<TH>
+    01/11/2011
+  </TH>
+  <TH>
+    1:00 pm
+  </TH>
+  <TH>
+    F313 
+  </TH>
+  <TH>
+    Xiaohui Shen
+  </TH>
+  <TH>
+    TILT: Transform Invariant Low-rank Textures, IJCV 
+  </TH>
+</TR>
+</FONT>
+</table>
+</html>

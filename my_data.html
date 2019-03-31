@@ -1,0 +1,128 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+  <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.js"></script>
+  <script src="d3/d3.min.js"></script>
+  <script src="d3.timeline.js"></script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title>Datasets</title>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+   <ul class="nav navbar-nav">
+  <a class="navbar-brand" href="#">Jiang Wang</a>
+   <li><a href="index.html">Home</a></li>
+   <li><a href="pdfs/jiangwang_CV.pdf">CV</a></li>
+   <li><a href="pubs.html">Publications</a></li>
+   <li><a href="soft.html">Softwares</a></li>
+   <li class="active"><a href="my_data.html">Data</a></li>
+   <li><a href="about.html">About</a></li>
+    </ul>
+   </div>
+   </nav>
+<div id="toptitle">
+<h1>Datasets</h1>
+<div id="subtitle"><link href="imgs/favicon.ico" rel="shortcut icon" type="image/x-icon" /></div>
+</div>
+<h2>MSR Action 3D</h2>
+<div class="media">
+<a class="pull-left"><img class="media object" src="imgs/MSR-Action3D.png" alt="225" width="660px" /></a><div class="media-body"><p>MSR-Action3D dataset  is an action dataset of depth sequences
+captured by a depth camera. This dataset contains
+twenty actions: high arm wave, horizontal arm wave,
+hammer, hand catch, forward punch, high throw, draw x, draw tick,
+draw circle,
+hand clap, two hand wave, side-boxing,
+bend, forward kick, side kick, jogging,
+tennis swing, tennis serve, golf swing,
+pick up & throw. It is created by <a href="http://www.uow.edu.au/~wanqing/">Wanqing Li</a> during his time at
+Microsoft Research Redmond.</p>
+<p>The dataset can be found in <a href="http://research.microsoft.com/en-us/um/people/zliu/actionrecorsrc/">http://research.microsoft.com/en-us/um/people/zliu/actionrecorsrc/</a>.</p>
+</div></div>
+<h2>MSR DailyActivity 3D Dataset</h2>
+<div class="media">
+<a class="pull-left"><img class="media object" src="imgs/MSR-dailyAcitity3D.png" alt="225" width="660px" /></a><div class="media-body"><p>DailyActivity3D dataset  is a daily activity dataset captured by a Kinect device. There are 16 activity types:
+drink, eat, read book, call cellphone,write on a paper, use laptop,
+use vacuum cleaner, cheer up, sit still,
+toss paper, play game, lay down on sofa,
+walk, play guitar, stand up, sit down.
+If possible, each subject performs an activity in two
+different poses: &ldquo;sitting on sofa&rdquo; and &ldquo;standing&rdquo;. The total
+number of the activity sequences is &ldquo;320&rdquo;.</p>
+<p>This data was created by me during my time at Microsoft Research Redmond.</p>
+<p>The dataset can be found in <a href="http://research.microsoft.com/en-us/um/people/zliu/actionrecorsrc/">http://research.microsoft.com/en-us/um/people/zliu/actionrecorsrc/</a>.</p>
+<p>I have created a cropped version of this dataset, which only contains the cropped
+human regions, it can be found here <a href="http://users.eecs.northwestern.edu/~jwa368/cropped_depth.tar.bz2">cropped version of MSRDailyAction Dataset</a>.</p>
+</div></div>
+<h2>Subtle Walking  From CMU Mocap Dataset</h2>
+<p>This is a subject of the subtle waking activities in CMU Mocap Dataset. This
+dataset is collected in the paper &ldquo;L. Han, X. Wu, W. Liang, G. Hou, and Y. Jia, 'Discriminative
+human action recognition in the learned hierarchical manifold
+space&rsquo;, Image and Vision Computing, vol. 28, no. 5, pp. 836-849,
+May 2010.&rdquo;. I replicate the collection and organization process of this paper, and
+create a dataset accordingly.</p>
+<p>The dataset can be found in <a href="http://users.eecs.northwestern.edu/~jwa368/mocap.tar.bz2">MoCap Walking Dataset</a>.</p>
+<h2>MSR Gesture 3D Dataset</h2>
+<div class="media">
+<a class="pull-left"><img class="media object" src="imgs/MSR-Gesture3D.png" alt="225" width="330px" /></a><div class="media-body"><p>The dataset was captured by a Kinect device by Alex Kurakin. There are 12 dynamic American Sign Language (ASL) gestures, and 10 people. Each person performs each gesture 2-3 times. There are 336 files in total, each corresponding to a depth sequence. The hand portion (above the wrist) has been segmented. The file name has the format sub_depth_m_n where m is the person index. n ranges from 1 to 36. Note that for some (m,n), the file sub_depth_m_n  does not exist. For example, there is no &ldquo;sub_depth_02_03&rdquo;. The reason is that some of the bad sequences are excluded from the dataset. I cropped the hand with Kinect skeleton tracker and subsample all the data to the fixed size.</p>
+<p>The dataset can be founded in <a href="http://research.microsoft.com/en-us/um/people/zliu/actionrecorsrc/">http://research.microsoft.com/en-us/um/people/zliu/actionrecorsrc/</a>.</p>
+</div></div>
+<h2>Northwestern-UCLA Multiview Action 3D Dataset</h2>
+<div class="media">
+<a class="pull-left"><img class="media object" src="imgs/multiview_examples_new.png" alt="225" width="600px" /></a><div class="media-body"><p>The Multiview 3D event dataset is capture by me and <a href="http://www.stat.ucla.edu/~xiaohan.nie/">Xiaohan Nie</a> in UCLA.
+it contains RGB, depth and human skeleton data captured
+simultaneously by three Kinect cameras. This dataset include 10 action
+categories: pick up with one hand, pick up with two
+hands, drop trash, walk around, sit down,
+stand up, donning, doffing, throw, carry. Each action is
+performed by 10 actors. This dataset contains data taken from a variety of  viewpoints.</p>
+<p>The dataset can be found in
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-aa">part-1</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ab">part-2</a>
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ac">part-3</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ad">part-4</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ae">part-5</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-af">part-6</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ag">part-7</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ah">part-8</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ai">part-9</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-aj">part-10</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ak">part-11</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-al">part-12</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-am">part-13</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-an">part-14</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ao">part-15</a>,
+<a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action.tgz.part-ap">part-16</a>,</p>
+<p>We also created a version of the dataset that only contains RGB videos: <a href="http://users.eecs.northwestern.edu/~jwa368/data/multiview_action_videos.tgz">RGB videos only</a>.</p>
+</div></div>
+<h2>Image Similarity Triplet Dataset</h2>
+<div class="media">
+<a class="pull-left"><img class="media object" src="imgs/sample_triplets_table.png" alt="225" width="600px" /></a><div class="media-body"><p>This dataset was created by the engineers in image search team at Google. I used this dataset in my DeepRanking paper.
+It characterizes fine-grained image similarity with a large number of image triplets. In that paper, I only used
+this dataset as evaluation dataset.</p>
+<p><a href="https://sites.google.com/site/imagesimilaritydata/">https:<i></i>sites.google.com<i>site</i>imagesimilaritydata/</a></p>
+</div></div>
+<div id="footer">
+<div id="footer-text">
+Page generated 2014-06-02 16:49:02 CDT, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+</div>
+</div>
+</td>
+</tr>
+</table>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-28719285-1', 'northwestern.edu');
+  ga('send', 'pageview');
+</script>
+</html>

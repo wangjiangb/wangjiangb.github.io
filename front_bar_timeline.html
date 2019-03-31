@@ -1,0 +1,265 @@
+<style>
+  .carousel {
+    background-color:#272727;
+    padding-top:0px;
+  }
+</style>
+<script type="text/javascript">
+ window.onload = function() {
+  var testDataNew = [
+  {times: [{"starting_time": new Date(2006, 9, 1, 0, 0, 0, 0),
+  "ending_time": new Date(2007, 7, 1, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 09/2003-07/2007 </tspan>: Fudan University Bachelor", "color": "#f6841f"}]},
+  {times: [{"starting_time": new Date(2007, 6, 1, 0, 0, 0, 0),
+  "ending_time" : new Date(2007, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\">2007 Summer </tspan>: Software Engineer Intern, Accenture", "color": "#4efc19"}]},
+  {times: [{"starting_time": new Date(2007, 9, 1, 0, 0, 0, 0),
+  "ending_time": new Date(2010, 7, 1, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 09/2007-07/2010</tspan>: Fudan University Master", "color": "#fcd712"}]},
+  {times: [{"starting_time": new Date(2008, 7, 1, 0, 0, 0, 0),
+  "ending_time": new Date(2008, 9, 30, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2008 Summer</tspan>: Research Intern, Microsoft Research Asia","color": "#4efc19"}]},
+  {times: [{"starting_time": new Date(2009, 5, 1, 0, 0, 0, 0),
+  "ending_time": new Date(2009, 8, 30, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2009 Summer</tspan>: R&D Intern, Baidu Shanghai", "color": "#4efc19"}]},
+  {times: [{"starting_time": new Date(2010, 9, 1, 0, 0, 0, 0),
+  "ending_time": new Date(2014, 6, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 09/2010--06/2014</tspan>: Northwestern University Ph.D.", "color": "#00a3ff"}]},
+  {times: [{"starting_time": new Date(2011, 6, 15, 0, 0, 0, 0),
+  "ending_time": new Date(2011, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2011 Summer</tspan>: Research Intern, Microsoft Research Redmond", "color": "#4efc19"}]},
+  {times: [{"starting_time": new Date(2012, 6, 15, 0, 0, 0, 0),
+  "ending_time": new Date(2012, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2012 Summer</tspan>: SDE Intern, Google Research", "color": "#4efc19"}]},
+    {times: [{"starting_time": new Date(2012, 10, 1, 0, 0, 0, 0),
+  "ending_time": new Date(2012, 12, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2012 Fall</tspan>: Visiting student, UCLA VCLA lab", "color": "#00a3ff"}]},
+  {times: [{"starting_time": new Date(2013, 6, 15, 0, 0, 0, 0),
+  "ending_time": new Date(2013, 9, 15, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 2013 Summer</tspan>: SDE Intern, Google", "color": "#4efc19"}]},
+  {times: [{"starting_time": new Date(2014, 1, 15, 0, 0, 0, 0),
+  "ending_time": new Date(2014, 2, 20, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\"> 01/2014:</tspan>Publish book: Human Action Recogniton with Depth Camera", color: "#ddd"}]},
+  {times: [{"starting_time": new Date(2014, 6, 15, 0, 0, 0, 0),
+ "ending_time": new Date(2016, 9, 3, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\">  06/2014:</tspan> Research Scientist at Baidu Deep Learning Research Institue", "color": "#4efc19"}]},
+   {times: [{"starting_time": new Date(2016, 9, 3, 0, 0, 0, 0),
+  "ending_time": new Date(2016, 12, 31, 0, 0, 0, 0), "label":"<tspan font-weight = \"bold\">  06/2014:</tspan> Research Engineer at Google Research", "color": "#4efc19"}]},
+  ];
+  var width = $('#carousel-header').width();
+  var chartWidth = Math.min(1500, Math.max(1000, width));
+  $('#names').css("padding-left", (width - 900) /2)
+  var chart = d3.timeline().stack().width(chartWidth)
+  .margin({left: 0, right: 450, top: 0, bottom: 0})
+  .textColor("#999")
+  .barOpacity(.5)
+  .itemHeight(15)
+        .tickFormat( //
+                    {format: d3.time.format("%Y"),
+                    tickTime: d3.time.years,
+                    tickInterval: 1,
+                    tickSize: 10})
+        .scroll(function (x, scale) {
+          $("#scrolled_date").text(scale.invert(x) + " to " + scale.invert(x+width));
+        });
+
+        var svg = d3.select("#timeline").append("svg").attr("width", width)
+        .datum(testDataNew).call(chart);
+      }
+    </script>
+    <script type="text/javascript">
+      function timeline(){
+        var height = 350;
+        var growDiv=document.getElementById('timeline');
+        if(growDiv.clientHeight){growDiv.style.height=0;}
+        else{
+          var wrapper=document.getElementById('life');
+          growDiv.style.height= height +"px";
+        }
+        document.getElementById("timeline-toggle").innerHTML=document.getElementById("timeline-toggle").innerHTML=="Show timeline ➟"?"Hide timeline":"Show timeline ➟";}
+      </script>
+      <div id="carousel-header" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div id="item-active" class="item active" align="middle">
+            <div id = "names" class = "names">
+              <div class = "name-head" id="name-head">
+                <h2 itemprop="name" style="margin-bottom: 100px"> Jiang Wang </h2>
+                <ul class = "short-bio">
+                  <li> Researcher at Google Research </li>
+                  <li> Hacker in Computer Vision </li>
+                  <li><a id="timeline-toggle" href="#!" onclick="timeline(); return false;">Hide timeline</a></li>
+                </ul>
+                <p id=icons>
+                  <a rel=me href="https://www.linkedin.com/pub/jiang-wang/24/36/216">
+                    <svg width=32 height=32 version=1.1 id=Icon xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x=0px y=0px viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space=preserve>
+                      <path fill-rule=evenodd clip-rule=evenodd fill="#256FBB" d="M48,42c0,3.313-2.687,6-6,6H6c-3.313,0-6-2.687-6-6V6
+                      c0-3.313,2.687-6,6-6h36c3.313,0,6,2.687,6,6V42z"/>
+                      <g>
+                        <g>
+                          <path fill="#257EAA" d="M13.237,33.891h4.988V16.842h-4.988V33.891z M15.731,9.966c-1.608,0-2.658,1.083-2.625,2.527
+                          c-0.033,1.378,1.018,2.494,2.593,2.494c1.641,0,2.691-1.116,2.691-2.494C18.357,11.049,17.339,9.966,15.731,9.966z M31.712,17.081
+                          c-1.595,0-3.222-0.329-4.956,2.36h-0.099l-0.087-2.599h-4.417c0.065,1.411,0.074,3.518,0.074,5.52v11.529h4.988v-9.855
+                          c0-0.46,0.065-0.919,0.196-1.248c0.328-0.919,1.149-1.871,2.527-1.871c1.805,0,2.527,1.411,2.527,3.479v9.495h4.988V23.773
+                          C37.455,19.047,34.993,17.081,31.712,17.081z"/>
+                        </g>
+                      </g>
+                      <g>
+                        <path fill="#FFFFFF" d="M15.731,11.633c-1.608,0-2.658,1.083-2.625,2.527c-0.033,1.378,1.018,2.494,2.593,2.494
+                        c1.641,0,2.691-1.116,2.691-2.494C18.357,12.716,17.339,11.633,15.731,11.633z M13.237,35.557h4.988V18.508h-4.988V35.557z
+                        M31.712,18.748c-1.595,0-3.222-0.329-4.956,2.36h-0.099l-0.087-2.599h-4.417c0.065,1.411,0.074,3.518,0.074,5.52v11.529h4.988
+                        v-9.854c0-0.46,0.065-0.919,0.196-1.248c0.328-0.919,1.149-1.871,2.527-1.871c1.805,0,2.527,1.411,2.527,3.479v9.494h4.988V25.439
+                        C37.455,20.713,34.993,18.748,31.712,18.748z"/>
+                      </g>
+                    </g>
+                  </svg>
+                </a>
+
+                <a rel=me href="https://twitter.com/wangjiang">
+                  <svg version=1.1 width=32 height=32 id=Icon xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x=0px y=0px viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space=preserve>
+                    <path fill-rule=evenodd clip-rule=evenodd fill="#29AAE1" d="M48,42c0,3.313-2.687,6-6,6H6c-3.313,0-6-2.687-6-6V6
+                    c0-3.313,2.687-6,6-6h36c3.313,0,6,2.687,6,6V42z"/>
+                    <path fill="#29AAE1" d="M40.231,13.413c-1.12,0.497-2.323,0.833-3.588,0.984c1.291-0.774,2.28-1.998,2.747-3.457
+                    c-1.206,0.716-2.543,1.236-3.968,1.516c-1.139-1.214-2.763-1.972-4.56-1.972c-3.449,0-6.246,2.796-6.246,6.247
+                    c0,0.49,0.055,0.966,0.161,1.424c-5.192-0.261-9.795-2.749-12.876-6.528c-0.538,0.923-0.846,1.996-0.846,3.141
+                    c0,2.167,1.103,4.08,2.779,5.199c-1.024-0.032-1.987-0.313-2.83-0.781c0,0.026,0,0.053,0,0.079c0,3.026,2.153,5.551,5.011,6.125
+                    c-0.525,0.143-1.076,0.219-1.646,0.219c-0.403,0-0.794-0.038-1.176-0.11c0.795,2.48,3.102,4.287,5.835,4.338
+                    c-2.138,1.675-4.832,2.675-7.758,2.675c-0.504,0-1.002-0.03-1.491-0.089c2.765,1.773,6.048,2.808,9.576,2.808
+                    c11.49,0,17.774-9.519,17.774-17.774c0-0.271-0.006-0.54-0.019-0.809C38.334,15.766,39.394,14.666,40.231,13.413z"/>
+                    <path fill="#FFFFFF" d="M40.231,14.739c-1.12,0.497-2.323,0.833-3.588,0.984c1.291-0.773,2.28-1.998,2.747-3.456
+                    c-1.206,0.716-2.543,1.236-3.968,1.516c-1.139-1.214-2.763-1.972-4.56-1.972c-3.449,0-6.246,2.796-6.246,6.247
+                    c0,0.489,0.055,0.966,0.161,1.424c-5.192-0.261-9.795-2.748-12.876-6.527c-0.538,0.923-0.846,1.996-0.846,3.141
+                    c0,2.167,1.103,4.079,2.779,5.199c-1.024-0.032-1.987-0.313-2.83-0.781c0,0.026,0,0.052,0,0.079c0,3.027,2.153,5.551,5.011,6.125
+                    c-0.525,0.144-1.076,0.219-1.646,0.219c-0.403,0-0.794-0.038-1.176-0.11c0.795,2.481,3.102,4.287,5.835,4.338
+                    c-2.138,1.676-4.832,2.675-7.758,2.675c-0.504,0-1.002-0.03-1.491-0.089c2.765,1.773,6.048,2.808,9.576,2.808
+                    c11.49,0,17.774-9.519,17.774-17.774c0-0.271-0.006-0.54-0.019-0.808C38.334,17.092,39.394,15.992,40.231,14.739z"/>
+                  </svg>
+                </a>
+                <a rel=me href="https://github.com/wangjiangb">
+                  <svg version=1.1 width=32 height=32 id=Icon xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x=0px y=0px viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space=preserve>
+                    <path fill-rule=evenodd clip-rule=evenodd fill="#fff" d="M48,42c0,3.313-2.687,6-6,6H6c-3.313,0-6-2.687-6-6V6
+                    c0-3.313,2.687-6,6-6h36c3.313,0,6,2.687,6,6V42z"/>
+                    <path fill-rule=evenodd clip-rule=evenodd fill=none d="M27.695,29.811c0,0,1.519,5.062,5.974,4.05
+                    c4.456-1.013,4.759-6.684,2.127-9.619C33.163,21.305,26.379,25.962,27.695,29.811z"/>
+                    <path fill-rule=evenodd clip-rule=evenodd d="M11.828,18.179c0,0-3.344,3.499-2.763,9.192
+                    c0.581,5.694,4.186,10.392,16.208,10.392c12.021,0,15.045-6.275,15.116-11.436c0.071-5.159-2.253-7.46-3.344-8.243
+                    c0,0,0.007-3.704-0.343-5.661c0,0-1.85-0.219-5.845,2.07c0,0-5.454-0.533-12.722,0.065c0,0-3.053-2.04-6.129-2.574
+                    C12.006,11.984,11.496,15.196,11.828,18.179z"/>
+                    <path fill-rule=evenodd clip-rule=evenodd fill="#E2B89F" d="M17.211,23.815h14.916c0,0,4.227-0.475,4.227,6.44
+                    c0.034,6.086-11.139,5.693-11.139,5.693s-12.236,0.486-12.243-6.269C12.956,23.579,17.211,23.815,17.211,23.815z"/>
+                    <g>
+                      <g>
+                        <path fill-rule=evenodd clip-rule=evenodd fill="#9C584F" d="M30.767,26.591c0.959,0,1.737,1.25,1.737,2.787
+                        c0,1.54-0.778,2.788-1.737,2.788c-0.958,0-1.736-1.248-1.736-2.788C29.03,27.841,29.809,26.591,30.767,26.591z"/>
+                        <path fill="#FFFFFF" d="M30.767,32.666c-1.254,0-2.236-1.444-2.236-3.288c0-1.843,0.982-3.287,2.236-3.287
+                        c1.255,0,2.237,1.444,2.237,3.287C33.004,31.222,32.021,32.666,30.767,32.666z M30.767,27.091c-0.585,0-1.236,0.939-1.236,2.287
+                        c0,1.349,0.651,2.288,1.236,2.288s1.237-0.939,1.237-2.288C32.004,28.03,31.352,27.091,30.767,27.091z"/>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path fill-rule=evenodd clip-rule=evenodd fill="#9C584F" d="M18.767,26.591c0.959,0,1.737,1.25,1.737,2.787
+                        c0,1.54-0.778,2.788-1.737,2.788c-0.958,0-1.736-1.248-1.736-2.788C17.03,27.841,17.809,26.591,18.767,26.591z"/>
+                        <path fill="#FFFFFF" d="M18.767,32.666c-1.254,0-2.236-1.444-2.236-3.288c0-1.843,0.982-3.287,2.236-3.287
+                        c1.254,0,2.237,1.444,2.237,3.287C21.004,31.222,20.021,32.666,18.767,32.666z M18.767,27.091c-0.585,0-1.236,0.939-1.236,2.287
+                        c0,1.349,0.651,2.288,1.236,2.288c0.585,0,1.237-0.939,1.237-2.288C20.004,28.03,19.352,27.091,18.767,27.091z"/>
+                      </g>
+                    </g>
+                    <path fill-rule=evenodd clip-rule=evenodd fill="#9C584F" d="M24.076,32.705c0,0,0.499-1.418,1.109-0.089
+                    c0,0-0.457,0.297-0.285,0.996l1.428,0.546h-3.23l1.28-0.575C24.378,33.583,24.562,32.527,24.076,32.705z"/>
+                  </svg>
+                </a>
+                <a rel=me href="https://www.facebook.com/wangjiangb">
+                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 width=32 height=32 viewBox="0 0 266.893 266.895" enable-background="new 0 0 266.893 266.895"
+                 xml:space="preserve">
+                 <path id="Blue_1_" fill="#3C5A99" d="M248.082,262.307c7.854,0,14.223-6.369,14.223-14.225V18.812
+                 c0-7.857-6.368-14.224-14.223-14.224H18.812c-7.857,0-14.224,6.367-14.224,14.224v229.27c0,7.855,6.366,14.225,14.224,14.225
+                 H248.082z"/>
+                 <path id="f" fill="#FFFFFF" d="M182.409,262.307v-99.803h33.499l5.016-38.895h-38.515V98.777c0-11.261,3.127-18.935,19.275-18.935
+                 l20.596-0.009V45.045c-3.562-0.474-15.788-1.533-30.012-1.533c-29.695,0-50.025,18.126-50.025,51.413v28.684h-33.585v38.895h33.585
+                 v99.803H182.409z"/>
+                 </svg>
+              </a>
+              <a rel=me href="http://scholar.google.com/citations?user=UyLVh08AAAAJ">
+               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               width=32 height=32  viewBox="-25 -25 405 405" enable-background="new 0 0 595.28 841.89" xml:space="preserve">
+               <g>
+                <g>
+                  <g>
+                    <path fill="#FFFFFF" d="M36.887-0.118h-0.321h-6.098l-0.147,0.025c-16.607,0-30.07,13.463-30.07,30.071l0.002,0.104l-0.015,0.153
+                    v9.769l0.015,0.714l0.058,307.226v0.17c0,16.602,13.462,30.066,30.063,30.066l0.172,0.012h318.233l0.176-0.012
+                    c16.604,0,30.066-13.467,30.066-30.066v-0.17l0.021-317.677v-0.503c0-16.597-13.467-30.059-30.068-30.059l-0.107,0.004
+                    L36.887-0.118z"/>
+                  </g>
+                  <g>
+                    <g>
+                      <path fill="#2658A0" d="M117.454,234.725c0.319,0.301,0.111,0.582,0.111,0.582S42.9,236.066,1.927,264.141
+                      c-1.683,1.158-1.518,0.918-1.518,0.918V126.453c0,0,27.166,58.221,104.537,46.377c0.917-0.133,0.934,0.42,0.934,0.42
+                      S85.848,204.711,117.454,234.725z"/>
+                    </g>
+                    <g>
+                      <path fill="#E7B819" d="M52.13,264.963C27.951,274.244,10.981,296,10.981,321.361c0,24.338,15.663,46.045,38.314,55.908
+                      c0,0,2.067,0.836,2.357,0.848c0.29,0.004,122.012,0,122.012,0s0.93-0.594,1.417-1.016
+                      c58.067-51.391,12.948-91.053-36.805-124.607c-0.897-0.607-2.147-0.74-2.147-0.74l-0.153-0.037
+                      c-10.333-1.221-25.75-0.598-42.717,2.092c-16.519,2.637-31.041,6.672-40.511,10.908L52.13,264.963z"/>
+                    </g>
+                    <g>
+                      <path fill="#D71718" d="M379.043,29.792c0-16.597-13.467-30.055-30.068-30.055l-0.105,0.004H184.383l-0.846-0.071
+                      c22.4,18.686,36.762,43.979,36.762,73.211c0,20.84-7.902,38.586-17.188,52.518l0.133-0.058
+                      c11.9-8.444,53.971-23.022,94.586-16.567c35.924,5.725,63.809,21.984,79.982,38.146l1.23,1.207V30.298V29.792z"/>
+                    </g>
+                    <g>
+                      <path fill="#127E3B" d="M379.021,347.975V148.558l0.021-0.432l-1.23-1.207c-16.176-16.161-44.061-32.421-79.984-38.146
+                      c-40.615-6.455-82.684,8.123-94.586,16.567l-0.484,0.414l-1.781,1.864c0,0-6.672,7.182-13.96,14.16
+                      c-7.28,6.979-17.879,15.607-17.879,15.607c-9.136,6.866-14.695,15.954-14.695,25.921c0,10.001,6.394,19.593,15.584,26.462
+                      c0,0,15.26,11.156,25.494,19.727c10.229,8.572,22.316,20.314,22.316,20.314c13.854,13.027,22.803,33.658,22.803,56.877
+                      c0,19.996-6.629,38.059-17.314,51.01l-16.373,20.523h141.83l0.176-0.014c16.604,0,30.066-13.463,30.066-30.066v-0.164H379.021z"
+                      />
+                    </g>
+                    <g>
+                      <path fill="#2658A0" d="M69.459,0.012C39.715,15.508,35.172,53.7,44.937,89.114c12.905,46.805,46.979,79.479,81.571,68.689
+                      c48.254-15.053,47.739-53.978,34.829-100.783c-6.704-24.338-24.214-47.216-41.516-57.024l-0.128-0.088H69.69L69.459,0.012z"/>
+                    </g>
+                    <g>
+                      <path fill="#2658A0" d="M0.238,30.266v9.775l0.015,0.706C9.248,22.655,22.331,8.354,36.887-0.093h-0.321h-6.098L30.321-0.06
+                      c-16.607,0-30.07,13.463-30.07,30.067l0.002,0.107L0.238,30.266z"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+              </svg>
+            </a>
+            <a rel=me href="http://wangjiangb.tumblr.com/">
+                <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                   width="32px" height="32px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
+                <g>
+                  <g>
+                    <g>
+                      <rect x="0.24" y="0.167" fill="#314358" width="255.52" height="256"/>
+                    </g>
+                  </g>
+                  <g>
+                    <path fill="#FFFFFF" d="M168.08,170.918c-2.969,1.416-8.647,2.648-12.881,2.754c-12.783,0.342-15.264-8.979-15.367-15.736v-49.705
+                      h32.065V84.055h-31.954V43.382c0,0-23.008,0-23.383,0c-0.385,0-1.057,0.337-1.152,1.192c-1.368,12.448-7.192,34.296-31.416,43.032
+                      v20.624h16.16v52.167c0,17.863,13.176,43.24,47.959,42.641c11.736-0.201,24.77-5.113,27.648-9.354L168.08,170.918"/>
+                  </g>
+                </g>
+                </svg>
+                </a>
+                <a rel=me href="mailto:wangjiangb@gmail.com">
+                  <svg width=32 height=32 version=1.1 id=Icon xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x=0px y=0px viewBox="176 76 48 48" enable-background="new 176 76 48 48" xml:space=preserve>
+                    <path fill="#D2D2D2" d="M224,117.928c0,3.307-2.683,5.989-5.989,5.989h-35.938c-3.308,0-5.99-2.683-5.99-5.989V81.99
+                    c0-3.307,2.682-5.99,5.99-5.99h35.938c3.307,0,5.989,2.683,5.989,5.99V117.928z"/>
+                    <path opacity=0.05 d="M220.654,121.186c-0.104-0.131-0.207-0.265-0.305-0.412c-0.99-1.499-1.969-3.048-2.954-4.606
+                    c-1.339-1.896-2.66-3.772-4.264-5.465c-0.733-0.773-1.146-1.613-1.314-2.454c-1.72-2.369-3.482-4.706-5.353-6.963
+                    c-0.149-0.181-0.28-0.365-0.4-0.551c-0.394-0.401-0.774-0.816-1.183-1.199c-0.098-0.091-0.181-0.186-0.269-0.28
+                    c-0.658,0.56-1.299,1.147-1.911,1.779c-2.291,2.361-5.245,1.679-7-0.167c-0.087,0.001-0.174-0.008-0.262-0.009
+                    c-0.911,1.021-1.82,2.047-2.717,3.095c-1.676,1.96-3.278,3.979-4.892,5.987c-0.956,1.659-2.282,3.056-3.609,4.44
+                    c-0.124,0.376-0.264,0.751-0.49,1.056c-0.278,0.377-0.563,0.748-0.856,1.113c-0.19,0.149-0.383,0.295-0.574,0.442
+                    c-1.148,2.009-2.527,3.826-4.053,5.543c1.038,0.861,2.37,1.381,3.824,1.381h35.938c1.358,0,2.593-0.475,3.597-1.237
+                    C221.196,122.246,220.879,121.737,220.654,121.186z"/>
+                    <path opacity=0.4 fill="#FFFFFF" d="M179.808,84.909c1.984,1.965,4,3.664,5.802,5.738l0.176,0.151l-0.025,0.019
+                    c0.234,0.274,0.462,0.557,0.688,0.846c3.334,3.101,7.497,5.558,10.63,8.936c0.82,0.884,1.918,2.05,2.867,3.349
+                    c0.228-0.747,0.688-1.481,1.436-2.148c4.773-4.259,9.473-8.611,14.184-12.937c2.618-2.405,5.312-5.342,8.413-7.288
+                    c-0.214-3.112-2.802-5.574-5.968-5.574h-35.938c-3.079,0-5.612,2.324-5.949,5.312C177.415,82.353,178.479,83.592,179.808,84.909z"/>
+                    <polygon fill="#BCBCBC" points="176.115,81.374 200,101.959 223.969,81.374 200,105.25 "/>
+                    <polygon fill="#BCBCBC" points="221.672,122.718 204.188,100.75 205.969,99.094 "/>
+                    <polygon fill="#BCBCBC" points="178.346,122.718 196.031,100.812 194.375,99.094 "/>
+                  </svg>
+                </a>
+              </p>
+            </div>
+            <div id="timeline"></div>
+          </div>
+        </div>
+      </div>
+    </div>
